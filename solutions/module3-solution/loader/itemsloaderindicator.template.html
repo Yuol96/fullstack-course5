@@ -1,0 +1,9 @@
+<div class="row">
+	<ul>
+		<li ng-repeat="item in list.ilist">
+			{{item.name}}, {{item.short_name}}, {{item.description}}
+			<button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+		</li>
+	</ul>
+</div>
+<div class="error" ng-transclude></div>
