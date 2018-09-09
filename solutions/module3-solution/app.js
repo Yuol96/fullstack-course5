@@ -11,27 +11,35 @@ function NarrowItDownController(MenuSearchService) {
 	var ndc = this;
 
 	ndc.searchTerm = "";
+	ndc.errorFlag = false;
 	ndc.getItems = function() {
 		if(ndc.searchTerm){
-			$(".error").css("display","none");
+			ndc.errorFlag = false;
 
 			var promise = MenuSearchService.getMatchedMenuItems(ndc.searchTerm);
 			promise.then(function(data){
 				ndc.found = data;
 				console.log(ndc.found);
 				if(ndc.found.length===0) {
-					$(".error").css("display","block");
+					ndc.errorFlag = true;
 				}
 			});
 		}
 		else {
-			$(".error").css("display","block");
+			ndc.errorFlag = true;
 		}
 		
 	};
 
 	ndc.removeItem = function(index) {
 		ndc.found.splice(index,1);
+	};
+
+	ndc.showError = function() {
+		if(ndc.errorFlag){
+			return true;
+		}
+		return false;
 	};
 
 }

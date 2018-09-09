@@ -69,3 +69,8 @@ https://github.com/jhu-ep-coursera/restaurant-menu-server
 - It's a best practice to have the directive avoid changing the data.
 - `func.call(obj)` 强制把func的context设置成obj
 - The link function is called with preset arguments, so you can't directly inject anything into the link function.
+
+
+
+# components
+

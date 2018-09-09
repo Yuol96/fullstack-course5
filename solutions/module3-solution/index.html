@@ -21,7 +21,7 @@
     </div>
     <!-- found-items should be implemented as a component -->
     <found-items ilist="ndc.found" on-remove="ndc.removeItem(index)">
-      <span class="error">Nothing found</span>
+      <span class="error" ng-if="ndc.showError()">Nothing found</span>
     </found-items>
   </div>
 
