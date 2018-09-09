@@ -35,13 +35,6 @@ function NarrowItDownController(MenuSearchService) {
 		ndc.found.splice(index,1);
 	};
 
-	ndc.showError = function() {
-		if(ndc.errorFlag){
-			return true;
-		}
-		return false;
-	};
-
 }
 
 MenuSearchService.$inject = ['$http'];
